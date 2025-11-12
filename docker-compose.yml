@@ -1,0 +1,28 @@
+networks:
+  cassandra-network:
+    driver: bridge
+
+volumes:
+  cassandra-volume:
+
+services:
+  cassandra-db:
+    image: cassandra:latest
+    container_name: cassandra
+    ports: 
+      - "9042:9042"
+      - "7000:7000"
+    networks:
+      - cassandra-network
+    volumes:
+      - cassandra-volume:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=CoolCluster
+      - CASSANDRA_AUTHENTICATOR=PasswordAuthenticator
+      - CASSANDRA_AUTHORIZER=CassandraAuthorizer
+      - CASSANDRA_DC=dc1
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -u cassandra -p cassandra -e 'describe cluster'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
