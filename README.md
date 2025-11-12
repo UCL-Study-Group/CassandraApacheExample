@@ -3,7 +3,7 @@
 ## Introduction
 
 In our lecture, we where tasked with creating an presentation in which we showed a database, which would standout from the usual Relational and Document databases. Apache Cassandra is one such database.
-Cassandra is setup in a funny middle group, since it borrows a lot of the same properties you'd be familiar with from the typical Rational-database, it even uses a lot fo the same commands as queries.
+Cassandra is setup in a funny middle ground, since it borrows a lot of the same properties you'd be familiar with from the typical Rational-database, it even uses a lot fo the same commands as queries.
 
 ## The setup process
 
@@ -73,3 +73,4 @@ ALTER USER cassandra WITH PASSWORD 'your_strong_password';
 And that's it! Now you're up and running with a cool Apache Cassandra database B)
 
 Now go out there and drops some tables <3
+
