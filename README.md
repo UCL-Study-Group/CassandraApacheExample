@@ -2,21 +2,22 @@
 
 ## Introduction
 
-In our lecture, we where tasked with creating an presentation in which we showed a database, which would standout from the usual Relational and Document databases. Apache Cassandra is one such database.
-Cassandra is setup in a funny middle ground, since it borrows a lot of the same properties you'd be familiar with from the typical Rational-database, it even uses a lot fo the same commands as queries.
+In our lecture, we were tasked with creating a presentation in which we have to show a database, which would stand out from the usual Relational and Document databases. Apache Cassandra is one such database.
+Cassandra is set up in a funny middle ground, since it borrows a lot of the same properties you'd be familiar with from the typical Relational-database, it even uses a lot of the same commands as queries.
 
 ## The setup process
 
 ### Setting up the Database
 
-To setup the database is fairly simple, considering you're using Docker to run it, which I presume you do, as you're here ;)
-But to starts or you can pull the latest images from Docker run using the following
+To set up the database is fairly simple, considering you're using Docker to run it, which I presume you do, as you're here ;)
+
+But to start, you can pull the latest images from Docker run using the following
 
 ```console
 docker pull cassandra:latest
 ```
 
-Or just skip it entirely by just running the image directly, along with a network, which we will be using to connect to t later
+Or just skip it entirely by just running the image directly, along with a network, which we will be using to connect to it later
 
 ```console
 docker network create cassandra
@@ -26,8 +27,8 @@ docker run --rm -d --name cassandra --hostname cassandra --network cassandra cas
 
 ### Connecting to the database
 
-After we've set it up, we can go over to how we'd connect to it. I was looking around for an user interface which we could use to show it off, but every image I could find seemed to be using an outdated
-version of Cassandra. So we'll be using CQL (Cassandra Query Languange), which is it's own languange used to make queries. We'll run it like any other docker container and connect to it though the network
+After we've set it up, we can go over to how we'd connect to it. I was looking around for a user interface which we could use to show it off, but every image I could find seemed to be using an outdated
+version of Cassandra. So we'll be using CQL (Cassandra Query Language), which is its own language used to make queries. We'll run it like any other docker container and connect to it through the network
 we created earlier
 
 #### *Important note*
@@ -73,4 +74,5 @@ ALTER USER cassandra WITH PASSWORD 'your_strong_password';
 And that's it! Now you're up and running with a cool Apache Cassandra database B)
 
 Now go out there and drops some tables <3
+
 
